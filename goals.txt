@@ -1,0 +1,28 @@
+# Project Goals & Tasks
+# Update this file with your project's tasks
+# Mark completed tasks with [x] and pending with [ ]
+# The AI will use this to estimate completion % and plan daily work
+
+## Core Features
+- [ ] Feature 1: User authentication
+- [ ] Feature 2: Dashboard layout
+- [ ] Feature 3: Data import/export
+- [ ] Feature 4: API integration
+- [ ] Feature 5: Notifications system
+
+## Bug Fixes
+- [ ] Fix responsive design issues
+- [ ] Fix loading states
+
+## Improvements
+- [ ] Add dark mode
+- [ ] Optimize performance
+- [ ] Add unit tests
+
+## Documentation
+- [ ] Write API docs
+- [ ] Write user guide
+
+## Completed
+- [x] Project setup
+- [x] Initial repo creation

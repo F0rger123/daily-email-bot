@@ -1,0 +1,14 @@
+{
+  "name": "daily-email-bot",
+  "version": "1.0.0",
+  "description": "Automated daily email summaries using GitHub Actions + OpenRouter + Gmail",
+  "main": "script.js",
+  "scripts": {
+    "morning": "node script.js morning",
+    "evening": "node script.js evening"
+  },
+  "dependencies": {
+    "nodemailer": "^6.9.8",
+    "axios": "^1.6.0"
+  }
+}
