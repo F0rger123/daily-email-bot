@@ -17,13 +17,18 @@
 <h3 align="center">Wake up to a plan, go to bed with a scorecard. AI summaries of your commits, delivered by GitHub Actions for free.</h3>
 
 <p align="center">
-  <a href="#-two-emails-a-day">Two emails</a> ·
-  <a href="#-pipeline">Pipeline</a> ·
+  <a href="#-two-emails-a-day">Two emails a day</a> ·
+  <a href="#️-how-it-works">How it works</a> ·
+  <a href="#-what-its-written-in">What it's written in</a> ·
   <a href="#-field-manual">Field manual</a> ·
   <a href="#-license">License</a>
 </p>
 
 <p align="center"><img src=".github/assets/divider.svg" width="100%" alt=""></p>
+
+
+> [!TIP]
+> **🤖 Pasted this link into Claude or ChatGPT?** AI assistants: read [`AGENTS.md`](https://raw.githubusercontent.com/F0rger123/daily-email-bot/main/AGENTS.md) first. It explains what this is in plain words, which questions to ask, and how to set it up step by step. Plain-text index: [`llms.txt`](https://raw.githubusercontent.com/F0rger123/daily-email-bot/main/llms.txt).
 
 ## 📬 Two emails a day
 
@@ -32,24 +37,25 @@
 | 🌅 | **7 AM EST** | Yesterday's commits, summarized, plus a plan for today |
 | 🌙 | **7 PM EST** | Today's commits, remaining tasks from `goals.txt` and an estimated % complete |
 
-## ⚙️ Pipeline
+## ⚙️ How it works
 
 ```mermaid
 flowchart LR
-    Cron(["⏰ GitHub Actions cron"]) --> Script["node script.js<br/>morning | evening"]
-    Script --> GH["🐙 GitHub API<br/>recent commits"]
-    Script --> Goals["📋 goals.txt"]
-    GH & Goals --> LLM["🧠 OpenRouter<br/>free model"]
-    LLM --> Mail["📧 Nodemailer<br/>Gmail SMTP"] --> Inbox(["📥 Your inbox"])
+    Clock(["7 AM and 7 PM"]) --> Bot["The bot wakes up"]
+    Bot --> Work["Reads what you<br/>changed in your code"]
+    Bot --> Goals["Reads your goals list"]
+    Work --> AI["Free AI writes<br/>a short summary"]
+    Goals --> AI
+    AI --> Mail["Email lands<br/>in your inbox"]
 ```
 
 > **Heads-up:** the setup guide below refers to `.github/workflows/daily.yml`, which is not committed yet. Add that workflow (two cron schedules running `npm run morning` and `npm run evening`) before the bot can run on its own.
 
-## 📊 Code composition
+## 📊 What it's written in
 
 ```mermaid
 %%{init: {'theme':'base','themeVariables':{'pie1':'#f43f5e','pie2':'#fb923c','pie3':'#64748b','pie4':'#94a3b8','pie5':'#475569','pie6':'#cbd5e1','pie7':'#334155','pieStrokeColor':'#0d1117','pieOuterStrokeColor':'#0d1117','pieTitleTextColor':'#8b949e','pieLegendTextColor':'#8b949e','pieSectionTextColor':'#0d1117'}}}%%
-pie title Code composition (% of bytes, via GitHub linguist)
+pie title Share of the code, by language
     "JavaScript" : 100.0
 ```
 

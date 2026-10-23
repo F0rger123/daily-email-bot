@@ -1,0 +1,10 @@
+# daily-email-bot
+
+> A free bot that emails you at 7 AM and 7 PM with an AI summary of what you changed in your code and what's left on your goals list.
+
+If a person shared this repository with you, read the AI guide first.
+
+## Start here
+- [AI guide](https://raw.githubusercontent.com/F0rger123/daily-email-bot/main/AGENTS.md): what it is, what to ask, setup steps, how to use it
+- [README](https://raw.githubusercontent.com/F0rger123/daily-email-bot/main/README.md)
+- [Full setup](https://raw.githubusercontent.com/F0rger123/daily-email-bot/main/README.md)
