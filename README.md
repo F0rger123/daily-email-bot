@@ -1,4 +1,61 @@
-# 📧 Daily Email Bot
+<p align="center">
+  <img src=".github/assets/banner.svg" alt="DAILY EMAIL BOT: Your commits, summarized at 7 AM and 7 PM. Free forever." width="100%">
+</p>
+
+<p align="center">
+  <img src="https://img.shields.io/badge/status-public-f43f5e?style=for-the-badge" alt="Public">
+  <img src="https://img.shields.io/badge/license-MIT-f43f5e?style=for-the-badge" alt="License">
+  <img src="https://img.shields.io/github/last-commit/F0rger123/daily-email-bot?style=for-the-badge&color=f43f5e" alt="Last commit">
+  <img src="https://img.shields.io/github/repo-size/F0rger123/daily-email-bot?style=for-the-badge&color=f43f5e" alt="Repo size">
+</p>
+<p align="center">
+  <img src="https://img.shields.io/badge/Node.js-0d1117?style=flat-square&logo=nodedotjs&logoColor=white" alt="Node.js">
+  <img src="https://img.shields.io/badge/GitHub%20Actions-0d1117?style=flat-square&logo=githubactions&logoColor=white" alt="GitHub Actions">
+  <img src="https://img.shields.io/badge/Gmail-0d1117?style=flat-square&logo=gmail&logoColor=white" alt="Gmail">
+</p>
+
+<h3 align="center">Wake up to a plan, go to bed with a scorecard. AI summaries of your commits, delivered by GitHub Actions for free.</h3>
+
+<p align="center">
+  <a href="#-two-emails-a-day">Two emails</a> ·
+  <a href="#-pipeline">Pipeline</a> ·
+  <a href="#-field-manual">Field manual</a> ·
+  <a href="#-license">License</a>
+</p>
+
+<p align="center"><img src=".github/assets/divider.svg" width="100%" alt=""></p>
+
+## 📬 Two emails a day
+
+| | When | What you get |
+|---|---|---|
+| 🌅 | **7 AM EST** | Yesterday's commits, summarized, plus a plan for today |
+| 🌙 | **7 PM EST** | Today's commits, remaining tasks from `goals.txt` and an estimated % complete |
+
+## ⚙️ Pipeline
+
+```mermaid
+flowchart LR
+    Cron(["⏰ GitHub Actions cron"]) --> Script["node script.js<br/>morning | evening"]
+    Script --> GH["🐙 GitHub API<br/>recent commits"]
+    Script --> Goals["📋 goals.txt"]
+    GH & Goals --> LLM["🧠 OpenRouter<br/>free model"]
+    LLM --> Mail["📧 Nodemailer<br/>Gmail SMTP"] --> Inbox(["📥 Your inbox"])
+```
+
+> **Heads-up:** the setup guide below refers to `.github/workflows/daily.yml`, which is not committed yet. Add that workflow (two cron schedules running `npm run morning` and `npm run evening`) before the bot can run on its own.
+
+## 📊 Code composition
+
+```mermaid
+%%{init: {'theme':'base','themeVariables':{'pie1':'#f43f5e','pie2':'#fb923c','pie3':'#64748b','pie4':'#94a3b8','pie5':'#475569','pie6':'#cbd5e1','pie7':'#334155','pieStrokeColor':'#0d1117','pieOuterStrokeColor':'#0d1117','pieTitleTextColor':'#8b949e','pieLegendTextColor':'#8b949e','pieSectionTextColor':'#0d1117'}}}%%
+pie title Code composition (% of bytes, via GitHub linguist)
+    "JavaScript" : 100.0
+```
+
+<p align="center"><img src=".github/assets/divider.svg" width="100%" alt=""></p>
+
+## 📚 Field manual
 
 Automated morning and evening email summaries for your GitHub project. Runs 100% free on GitHub Actions.
 
@@ -142,3 +199,13 @@ Edit the `htmlBody` template in `script.js`.
 - Go to Actions tab → check if the workflow is enabled
 - Try triggering manually first
 - Check cron syntax is correct
+
+## 📜 License
+
+Released under the [MIT License](LICENSE). Use it, fork it, ship it.
+
+<p align="center"><img src=".github/assets/divider.svg" width="100%" alt=""></p>
+
+<p align="center">
+  <sub>Built by <a href="https://github.com/F0rger123"><b>@F0rger123</b></a> · MIT licensed</sub>
+</p>
